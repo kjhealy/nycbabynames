@@ -1,0 +1,66 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# nycbabynames <img src="man/figures/nycbabynames.png" align="right" width="360">
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Provides a tibble of popular baby names by sex, ethnicity, and year of
+birth in New York City, 2011--2021. Sourced from the NYC Department of
+Health and Mental Hygiene via NYC Open Data.
+
+## Installation
+
+You can install the development version of nycbabynames like so:
+
+``` r
+remotes::install_github("kjhealy/nycbabynames")
+```
+
+## Load
+
+```{r load}
+library(tidyverse)
+library(nycbabynames)
+```
+
+## What's included
+
+### Popular Baby Names
+
+```{r babynames}
+nyc_babynames_df
+```
+
+The dataset contains `r format(nrow(nyc_babynames_df), big.mark = ",")` records across `r length(unique(nyc_babynames_df$year_of_birth))` years.
+
+## Example
+
+```{r example-plot, fig.asp = 0.8, dpi = 300}
+nyc_babynames_df |>
+  filter(rank == 1) |>
+  count(childs_first_name, gender, sort = TRUE) |>
+  slice_head(n = 10) |>
+  ggplot(aes(x = fct_reorder(childs_first_name, n), y = n)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    x = NULL,
+    y = "Number of years at rank 1 (across all ethnicities)",
+    title = "Most frequently top-ranked baby names in NYC, 2011-2021"
+  ) +
+  theme_minimal()
+```

@@ -1,0 +1,21 @@
+Package: nycbabynames
+Title: Popular Baby Names in New York City
+Version: 0.0.1.9000
+Authors@R:
+    person("Kieran", "Healy", , "kjhealy@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "https://orcid.org/0000-0001-9114-981X"))
+Description: Popular baby names by sex, ethnicity, and year of birth for
+    New York City, 2011--2021. Sourced from the NYC Department of Health
+    and Mental Hygiene via NYC Open Data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 3.5)
+Suggests:
+    tibble (>= 3.0.0)
+LazyData: true
+LazyDataCompression: xz
+URL: https://github.com/kjhealy/nycbabynames
+BugReports: https://github.com/kjhealy/nycbabynames/issues
