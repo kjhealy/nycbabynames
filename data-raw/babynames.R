@@ -9,13 +9,16 @@ nyc_babynames_df <- read_csv(
   show_col_types = FALSE
 ) |>
   clean_names() |>
+  rename(sex = gender) |>
   mutate(
+    sex = str_to_sentence(sex),
     ethnicity = replace_values(
       ethnicity,
       "ASIAN AND PACI" ~ "ASIAN AND PACIFIC ISLANDER",
       "BLACK NON HISP" ~ "BLACK NON HISPANIC",
       "WHITE NON HISP" ~ "WHITE NON HISPANIC"
     ),
+    ethnicity = str_to_sentence(ethnicity),
     childs_first_name = str_to_title(childs_first_name)
   )
 

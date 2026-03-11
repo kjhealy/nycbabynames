@@ -8,9 +8,9 @@
 #' A tibble with 21,612 rows and 6 columns:
 #' \describe{
 #'   \item{year_of_birth}{Year the baby was born (2011--2021).}
-#'   \item{gender}{Sex of the baby: "FEMALE" or "MALE".}
-#'   \item{ethnicity}{Mother's ethnicity: "ASIAN AND PACIFIC ISLANDER",
-#'     "BLACK NON HISPANIC", "HISPANIC", or "WHITE NON HISPANIC".}
+#'   \item{sex}{Sex of the baby: "Female" or "Male".}
+#'   \item{ethnicity}{Mother's ethnicity: "Asian and pacific islander",
+#'     "Black non hispanic", "Hispanic", or "White non hispanic".}
 #'   \item{childs_first_name}{Baby's first name, in title case.}
 #'   \item{count}{Number of babies with this name in the given year,
 #'     sex, and ethnicity group. Minimum count is 10.}

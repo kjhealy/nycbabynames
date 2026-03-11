@@ -43,18 +43,18 @@ library(nycbabynames)
 ``` r
 nyc_babynames_df
 #> # A tibble: 21,612 × 6
-#>    year_of_birth gender ethnicity                  childs_first_name count  rank
+#>    year_of_birth sex    ethnicity                  childs_first_name count  rank
 #>            <dbl> <chr>  <chr>                      <chr>             <dbl> <dbl>
-#>  1          2021 FEMALE ASIAN AND PACIFIC ISLANDER Chloe                71     1
-#>  2          2021 FEMALE ASIAN AND PACIFIC ISLANDER Olivia               71     1
-#>  3          2021 FEMALE ASIAN AND PACIFIC ISLANDER Emma                 66     2
-#>  4          2021 FEMALE ASIAN AND PACIFIC ISLANDER Mia                  59     3
-#>  5          2021 FEMALE ASIAN AND PACIFIC ISLANDER Ava                  53     4
-#>  6          2021 FEMALE ASIAN AND PACIFIC ISLANDER Amelia               46     5
-#>  7          2021 FEMALE ASIAN AND PACIFIC ISLANDER Evelyn               44     6
-#>  8          2021 FEMALE ASIAN AND PACIFIC ISLANDER Sophia               43     7
-#>  9          2021 FEMALE ASIAN AND PACIFIC ISLANDER Aria                 42     8
-#> 10          2021 FEMALE ASIAN AND PACIFIC ISLANDER Emily                39     9
+#>  1          2021 Female Asian and pacific islander Chloe                71     1
+#>  2          2021 Female Asian and pacific islander Olivia               71     1
+#>  3          2021 Female Asian and pacific islander Emma                 66     2
+#>  4          2021 Female Asian and pacific islander Mia                  59     3
+#>  5          2021 Female Asian and pacific islander Ava                  53     4
+#>  6          2021 Female Asian and pacific islander Amelia               46     5
+#>  7          2021 Female Asian and pacific islander Evelyn               44     6
+#>  8          2021 Female Asian and pacific islander Sophia               43     7
+#>  9          2021 Female Asian and pacific islander Aria                 42     8
+#> 10          2021 Female Asian and pacific islander Emily                39     9
 #> # ℹ 21,602 more rows
 ```
 
@@ -65,7 +65,7 @@ The dataset contains 21,612 records across 11 years.
 ``` r
 nyc_babynames_df |>
   filter(rank == 1) |>
-  count(childs_first_name, gender, sort = TRUE) |>
+  count(childs_first_name, sex, sort = TRUE) |>
   slice_head(n = 10) |>
   ggplot(aes(x = fct_reorder(childs_first_name, n), y = n)) +
   geom_col() +

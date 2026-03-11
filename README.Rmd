@@ -52,7 +52,7 @@ The dataset contains `r format(nrow(nyc_babynames_df), big.mark = ",")` records 
 ```{r example-plot, fig.asp = 0.8, dpi = 300}
 nyc_babynames_df |>
   filter(rank == 1) |>
-  count(childs_first_name, gender, sort = TRUE) |>
+  count(childs_first_name, sex, sort = TRUE) |>
   slice_head(n = 10) |>
   ggplot(aes(x = fct_reorder(childs_first_name, n), y = n)) +
   geom_col() +
