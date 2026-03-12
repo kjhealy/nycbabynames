@@ -23,16 +23,6 @@ remotes::install_github("kjhealy/nycbabynames")
 
 ``` r
 library(tidyverse)
-#> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-#> ✔ dplyr     1.2.0     ✔ readr     2.2.0
-#> ✔ forcats   1.0.1     ✔ stringr   1.6.0
-#> ✔ ggplot2   4.0.2     ✔ tibble    3.3.1
-#> ✔ lubridate 1.9.5     ✔ tidyr     1.3.2
-#> ✔ purrr     1.2.1     
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
-#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(nycbabynames)
 ```
 
@@ -67,9 +57,8 @@ nyc_babynames_df |>
   filter(rank == 1) |>
   count(childs_first_name, sex, sort = TRUE) |>
   slice_head(n = 10) |>
-  ggplot(aes(x = fct_reorder(childs_first_name, n), y = n)) +
+  ggplot(aes(x = n, y = fct_reorder(childs_first_name, n))) +
   geom_col() +
-  coord_flip() +
   labs(
     x = NULL,
     y = "Number of years at rank 1 (across all ethnicities)",
