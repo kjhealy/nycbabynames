@@ -60,8 +60,8 @@ nyc_babynames_df |>
   ggplot(aes(x = n, y = fct_reorder(childs_first_name, n))) +
   geom_col() +
   labs(
-    x = NULL,
-    y = "Number of years at rank 1 (across all ethnicities)",
+    x = "Number of years at rank 1 (across all ethnicities)",
+    y = NULL,
     title = "Most frequently top-ranked baby names in NYC, 2011-2021"
   ) +
   theme_minimal()
