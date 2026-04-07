@@ -59,6 +59,7 @@ nyc_babynames_df |>
   slice_head(n = 10) |>
   ggplot(aes(x = n, y = fct_reorder(childs_first_name, n))) +
   geom_col() +
+  scale_x_continuous(breaks = c(2, 5, 8, 10)) +
   labs(
     x = "Number of years at rank 1 (across all ethnicities)",
     y = NULL,
