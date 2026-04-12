@@ -56,14 +56,21 @@
 <p>You can install the development version of nycbabynames like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"kjhealy/nycbabynames"</span><span class="op">)</span></span></code></pre></div>
+<p>Alternatively, install this package from my <a href="https://kjhealy.r-universe.dev" class="external-link">r-universe</a>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span></span>
+<span>  <span class="st">"nycbabynames"</span>,</span>
+<span>  repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"https://kjhealy.r-universe.dev"</span>, <span class="st">"https://cloud.r-project.org"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>Including <code>https://cloud.r-project.org</code> ensures dependencies on CRAN are resolved automatically.</p>
 </div>
 <div class="section level2">
 <h2 id="load">Load<a class="anchor" aria-label="anchor" href="#load"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──</span></span>
-<span><span class="co">#&gt; ✔ dplyr     1.2.0     ✔ readr     2.2.0</span></span>
+<span><span class="co">#&gt; ✔ dplyr     1.2.1     ✔ readr     2.2.0</span></span>
 <span><span class="co">#&gt; ✔ forcats   1.0.1     ✔ stringr   1.6.0</span></span>
 <span><span class="co">#&gt; ✔ ggplot2   4.0.2     ✔ tibble    3.3.1</span></span>
 <span><span class="co">#&gt; ✔ lubridate 1.9.5     ✔ tidyr     1.3.2</span></span>
@@ -80,7 +87,7 @@
 <div class="section level3">
 <h3 id="popular-baby-names">Popular Baby Names<a class="anchor" aria-label="anchor" href="#popular-baby-names"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_babynames_df</span></span>
 <span><span class="co">#&gt; # A tibble: 21,612 × 6</span></span>
 <span><span class="co">#&gt;    year_of_birth sex    ethnicity                  childs_first_name count  rank</span></span>
@@ -102,7 +109,7 @@
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_babynames_df</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">rank</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">count</span><span class="op">(</span><span class="va">childs_first_name</span>, <span class="va">sex</span>, sort <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -155,6 +162,7 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/kjhealy/nycbabynames/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/kjhealy/nycbabynames/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://kjhealy.r-universe.dev/nycbabynames" class="external-link"><img src="https://kjhealy.r-universe.dev/nycbabynames/badges/version" alt="R-universe version"></a></li>
 </ul>
 </div>
 
