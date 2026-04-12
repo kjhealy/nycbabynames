@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/kjhealy/nycbabynames/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kjhealy/nycbabynames/actions/workflows/R-CMD-check.yaml)
+[![R-universe
+version](https://kjhealy.r-universe.dev/nycbabynames/badges/version)](https://kjhealy.r-universe.dev/nycbabynames)
 <!-- badges: end -->
 
 Provides a tibble of popular baby names by sex, ethnicity, and year of
@@ -20,12 +22,25 @@ You can install the development version of nycbabynames like so:
 remotes::install_github("kjhealy/nycbabynames")
 ```
 
+Alternatively, install this package from my
+[r-universe](https://kjhealy.r-universe.dev):
+
+``` r
+install.packages(
+  "nycbabynames",
+  repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
+)
+```
+
+Including `https://cloud.r-project.org` ensures dependencies on CRAN are
+resolved automatically.
+
 ## Load
 
 ``` r
 library(tidyverse)
 #> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-#> ✔ dplyr     1.2.0     ✔ readr     2.2.0
+#> ✔ dplyr     1.2.1     ✔ readr     2.2.0
 #> ✔ forcats   1.0.1     ✔ stringr   1.6.0
 #> ✔ ggplot2   4.0.2     ✔ tibble    3.3.1
 #> ✔ lubridate 1.9.5     ✔ tidyr     1.3.2

@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/kjhealy/nycbabynames/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kjhealy/nycbabynames/actions/workflows/R-CMD-check.yaml)
+[![R-universe version](https://kjhealy.r-universe.dev/nycbabynames/badges/version)](https://kjhealy.r-universe.dev/nycbabynames)
 <!-- badges: end -->
 
 Provides a tibble of popular baby names by sex, ethnicity, and year of
@@ -30,6 +31,17 @@ You can install the development version of nycbabynames like so:
 ``` r
 remotes::install_github("kjhealy/nycbabynames")
 ```
+
+Alternatively, install this package from my [r-universe](https://kjhealy.r-universe.dev):
+
+```r
+install.packages(
+  "nycbabynames",
+  repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
+)
+```
+
+Including `https://cloud.r-project.org` ensures dependencies on CRAN are resolved automatically.
 
 ## Load
 
