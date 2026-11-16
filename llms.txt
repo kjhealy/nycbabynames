@@ -9,6 +9,7 @@ Health and Mental Hygiene via NYC Open Data.
 You can install the development version of nycbabynames like so:
 
 ``` r
+
 remotes::install_github("kjhealy/nycbabynames")
 ```
 
@@ -16,6 +17,7 @@ Alternatively, install this package from my
 [r-universe](https://kjhealy.r-universe.dev):
 
 ``` r
+
 install.packages(
   "nycbabynames",
   repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
@@ -28,6 +30,7 @@ resolved automatically.
 ## Load
 
 ``` r
+
 library(tidyverse)
 #> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 #> ✔ dplyr     1.2.1     ✔ readr     2.2.0
@@ -47,6 +50,7 @@ library(nycbabynames)
 ### Popular Baby Names
 
 ``` r
+
 nyc_babynames_df
 #> # A tibble: 21,612 × 6
 #>    year_of_birth sex    ethnicity                  childs_first_name count  rank
@@ -69,6 +73,7 @@ The dataset contains 21,612 records across 11 years.
 ## Example
 
 ``` r
+
 nyc_babynames_df |>
   filter(rank == 1) |>
   count(childs_first_name, sex, sort = TRUE) |>
